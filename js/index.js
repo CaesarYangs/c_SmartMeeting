@@ -50,7 +50,15 @@ $(function(){
 		}
 	});
 	/**********以上部分是菜单的一二级的相关动态样式**********/
-	
+	var loginUserId = getParam("loginUserId");
+	for(var i=0;i<employeeJsonArray.length;i++){
+		var employee = employeeJsonArray[i];
+		if(employee != undefined && employee.id == loginUserId){
+			loginUser = employee;
+			break;
+		}
+	}
+	$("#loginSpan").html("欢迎登录"+loginUser.name);
 });
 
 
